@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    {% block title %}{% endblock title %}
+</head>
+<body>
+    
+    <nav class="navbar">
+        <h2>CodersEnsemble</h2>
+        <button>Login</button>
+    </nav>
+
+    {% block main %}{% endblock main %}
+    {% block script %}{% endblock script %}
+          
+</body>
+</html>

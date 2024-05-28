@@ -1,0 +1,64 @@
+{% extends 'main.html' %}
+
+{% block title %}CodersEnsemble{% endblock title %}
+
+{% block main %}
+<div class="container">
+    <div class="content">
+        <h4>Meet and Colaborate with Developers on Projects</h4>
+        <p>"Unleash your code's potential, join CodersEnsemble today! Collaborate, innovate, and code together in
+            perfect harmony. Your next breakthrough awaits in our vibrant developer community.</p>
+    </div>
+
+    <div class="signup">
+        <button>Sign Up with Google</button>
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+
+            <p>{{ form.firstname() }}</p>
+            <p>{{ form.lastname() }}</p>
+            <p>{{ form.username() }}</p>
+            <p>{{ form.email() }}</p>
+            <p>{{ form.password() }}</p>
+            <p>{{ form.confirm_pass() }}</p>
+            <p>{{ form.submit() }}</p>
+
+        </form>
+    </div>
+</div>
+
+<div class="reviews">
+    <div class="review">
+        <p>
+            <span><img src="{{ url_for('static', filename='img/user.jpg') }}"></span>
+            <span>Alice M:</span>
+        </p>
+
+        <p>CodersEnsemble has some great features, like the diverse range of projects and the ability to network with
+            other coders.</p>
+    </div>
+    <div class="review">
+        <p>
+            <span><img src="{{ url_for('static', filename='img/user.jpg') }}"></span>
+            <span>John S:</span>
+        </p>
+        <p>Perfect for beginners! Supportive community, excellent resources, and beginner-friendly projects have boosted
+            my confidence and knowledge.</p>
+    </div>
+    <div class="review">
+        <p>
+            <span><img src="{{ url_for('static', filename='img/user.jpg') }}"></span>
+            <span>David L:</span>
+        </p>
+        <p>Great features and useful collaboration tools, but needs better project management and matchmaking. Promising
+            platform with room for improvement.</p>
+    </div>
+</div>
+
+<footer>
+    <p>Privacy Policy</p>
+    <p>Terms of Service</p>
+    <p>Contact Us</p>
+    <p>About</p>
+</footer>
+{% endblock main %}
