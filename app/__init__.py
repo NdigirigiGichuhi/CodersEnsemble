@@ -1,24 +1,40 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from config import Config
 from flask_login import LoginManager
+from config import Config
+from flask_bcrypt import Bcrypt 
 
-app = Flask(__name__)
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+# Initialize Flask extensions
+db = SQLAlchemy()
+migrate = Migrate()
 login_manager = LoginManager()
 
+
+
 def create_app():
-    app.config.from_object("config.Config")
+    """
+    Create and configure the Flask application.
+
+    Returns:
+        Flask app instance.
+    """
+    app = Flask(__name__)
+    bcrypt = Bcrypt(app)
+
+    # Load the configuration from the config module
+    app.config.from_object(Config)
+
+    # Initialize Flask extensions with the app
     db.init_app(app)
-    migrate.init_app(db)
+    migrate.init_app(app, db)
     login_manager.init_app(app)
 
-    from my_app.views.auth import auth_bp
-
+    # Register Blueprints
+    from app.views.auth import auth_bp
     app.register_blueprint(auth_bp)
 
+    # Create database tables if they don't exist
     with app.app_context():
         db.create_all()
 
