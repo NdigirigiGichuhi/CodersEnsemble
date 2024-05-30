@@ -7,7 +7,39 @@
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Update Profile</legend>
+
             <div class="form-group">
+                {{ form.firstname.label(class="form-control-label") }}
+                {% if form.firstname.errors %}
+                {{ form.firstname(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.firstname.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.firstname(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.lastname.label(class="form-control-label") }}
+                {% if form.lastname.errors %}
+                {{ form.lastname(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.lastname.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.lastname(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+
+
+            <div class="form-group">
+                {{ form.username.label(class="form-control-label") }}
                 {% if form.username.errors %}
                 {{ form.username(class="form-control form-control-lg is-invalid") }}
                 <div class="invalid-feedback">
@@ -32,6 +64,35 @@
                 {{ form.email(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
+
+            <div class="form-group">
+                {{ form.password_hash.label(class="form-control-label") }}
+                {% if form.password_hash.errors %}
+                {{ form.password_hash(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.password_hash.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.password_hash(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form.confirm_pass.label(class="form-control-label") }}
+                {% if form.confirm_pass.errors %}
+                {{ form.confirm_pass(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.confirm_pass.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.confirm_pass(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            
         </fieldset>
         <div class="form-group">
             {{ form.submit(class="btn btn-outline-info") }}

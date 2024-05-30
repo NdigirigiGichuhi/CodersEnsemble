@@ -5,6 +5,7 @@ from flask_login import LoginManager
 from config import Config
 from flask_bcrypt import Bcrypt 
 
+
 # Initialize Flask extensions
 db = SQLAlchemy()
 migrate = Migrate()
@@ -20,7 +21,7 @@ def create_app():
         Flask app instance.
     """
     app = Flask(__name__)
-    bcrypt = Bcrypt(app)
+    bcrypt = Bcrypt()
 
     # Load the configuration from the config module
     app.config.from_object(Config)
@@ -29,6 +30,7 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)
     login_manager.init_app(app)
+    bcrypt.init_app(app)
 
     # Register Blueprints
     from app.views.auth import auth_bp

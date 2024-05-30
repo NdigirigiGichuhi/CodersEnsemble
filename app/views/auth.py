@@ -2,10 +2,13 @@ from flask import render_template, redirect, url_for, flash, Blueprint
 from app import db
 from app.forms import SignUpForm, LoginForm
 from flask_login import login_user, logout_user, login_required
-from app.models import User
+from app.models import User, Post
 from bcrypt import hashpw, gensalt
+import bcrypt
+
 
 auth_bp = Blueprint('auth', __name__)
+
 
 @auth_bp.route('/', methods=['POST', 'GET'])
 def index():
@@ -19,7 +22,7 @@ def index():
                 lastname=form.lastname.data,
                 username=form.username.data,
                 email=form.email.data,
-                password_hash=hashed_password.decode('utf-8')
+                password_hash=hashed_password
             )
             db.session.add(user)
             db.session.commit()
@@ -38,7 +41,7 @@ def login():
 
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
-        if user and hashpw(form.password.data.encode('utf-8'), user.password_hash.encode('utf-8')) == user.password_hash.encode('utf-8'):
+        if user and bcrypt.checkpw(form.password.data.encode('utf-8'), user.password_hash):
             login_user(user)
             return redirect(url_for('auth.dashboard'))
         flash('Invalid username or password')
@@ -46,7 +49,9 @@ def login():
 
 @auth_bp.route('/dashboard', methods=['POST', 'GET'])
 def dashboard():
-    return render_template('main/dashboard.html')
+    posts = Post.query.all()
+    return render_template('main/dashboard.html', posts=posts)
+
 
 @auth_bp.route('/logout', methods=['POST', 'GET'])
 @login_required

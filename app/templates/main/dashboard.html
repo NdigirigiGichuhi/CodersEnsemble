@@ -1,8 +1,24 @@
 {% extends 'main.html' %}
 
-{% block title %}Home{% endblock title %}
+{% block title %}Dasboard{% endblock title %}
 
 {% block main %}
+    <a href="{{ url_for('main.post') }}"><button>Post</button></a>
 
+    {% for post in posts %}
+        <div>
+            Posted By: {{ post.author.username }}
+            {{ post.title }}<br>
+            {{ post.content }}
+            
+            {% if current_user.username == post.author.username %}
+                <a href="{{ url_for('main.edit_post', id=post.id) }}"><button>Edit</button></a>
+            {% endif %}
+            {% if current_user.username == post.author.username %}
+                <a href="{{ url_for('main.delete_post', id=post.id) }}"><button>Delete</button></a>
+            {% endif %}
+            <hr>
+        </div>
+    {% endfor %}
         
 {% endblock main %}

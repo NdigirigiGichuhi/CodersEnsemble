@@ -10,9 +10,11 @@
     <div>
         <nav class="navbar">
             <h2>CodersEnsemble</h2>
+            {% if current_user.is_authenticated %}
             <a href="{{ url_for('main.display_profile')}}">
                 <button class="btn">Profile</button>
             </a>
+            {% endif %}
             <p>We're testing this!</p>
             {% if current_user.is_authenticated %}
                 <form action="{{ url_for('auth.logout') }}" method="POST" style="display:inline;">

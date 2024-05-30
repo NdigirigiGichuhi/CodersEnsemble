@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, EmailField, PasswordField, SubmitField
+from wtforms import StringField, EmailField, PasswordField, SubmitField, TextAreaField, DateTimeField
 from wtforms.validators import DataRequired, Email, EqualTo
+from datetime import datetime
 
 
 class SignUpForm(FlaskForm):
@@ -86,17 +87,31 @@ class EditProfileForm(FlaskForm):
         validators=[DataRequired(), Email()],
         render_kw={'placeholder': 'Email', 'size': '35'}
     )
-    password = PasswordField(
+    password_hash = PasswordField(
         'Password',
         validators=[DataRequired()],
         render_kw={'placeholder': 'Password', 'size': '35'}
     )
     confirm_pass = PasswordField(
         'Confirm Password',
-        validators=[DataRequired(), EqualTo('password')],
+        validators=[DataRequired(), EqualTo('password_hash')],
         render_kw={'placeholder': 'Confirm Password', 'size': '35'}
     )
     submit = SubmitField(
-        'Sign UP',
+        'Update Profile',
         render_kw={'class': 'submit-button'}
     )
+
+class PostForm(FlaskForm):
+    title = StringField('Title', validators=[DataRequired()])
+    content = TextAreaField("What's happening")
+    date_posted = DateTimeField('Date_posted', format='%Y-%m-%d %H:%M:%S', default=datetime.utcnow, validators=[DataRequired()])
+    post = SubmitField('Post')
+
+
+class EditPostForm(FlaskForm):
+    title = StringField('Title', validators=[DataRequired()])
+    content = TextAreaField("What's happening")
+    updated_at = DateTimeField('Date_posted', format='%Y-%m-%d %H:%M:%S', default=datetime.utcnow, validators=[DataRequired()])
+    post = SubmitField('Edit Post')
+
