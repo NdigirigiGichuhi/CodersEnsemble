@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for, flash, Blueprint
 from app import db
 from app.forms import SignUpForm, LoginForm
-from flask_login import login_user
+from flask_login import login_user, logout_user, login_required
 from app.models import User
 from bcrypt import hashpw, gensalt
 
@@ -42,8 +42,21 @@ def login():
             login_user(user)
             return redirect(url_for('auth.dashboard'))
         flash('Invalid username or password')
-    return render_template('login.html', form=form)
+    return render_template('auth/login.html', form=form)
 
 @auth_bp.route('/dashboard', methods=['POST', 'GET'])
 def dashboard():
-    return render_template('dashboard.html')
+    return render_template('main/dashboard.html')
+
+@auth_bp.route('/logout', methods=['POST', 'GET'])
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('auth.index'))
+
+"""
+@auth_bp.route('/auth-status')
+def auth_status():
+    is_authenticated = current_user.is_authenticated
+    return jsonify(isAuthenticated=is_authenticated)
+"""

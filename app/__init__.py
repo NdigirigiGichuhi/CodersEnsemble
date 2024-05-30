@@ -32,7 +32,11 @@ def create_app():
 
     # Register Blueprints
     from app.views.auth import auth_bp
+    from app.views.main import main_bp
+    
     app.register_blueprint(auth_bp)
+    app.register_blueprint(main_bp)
+    
 
     # Create database tables if they don't exist
     with app.app_context():

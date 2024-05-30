@@ -111,3 +111,10 @@ input[type="submit"] {
     font-size: 18px;
     padding: 2px;
 }
+
+.btn {
+    background-color: #BDC667;
+    font-size: 18px;
+    display: block;
+    padding: 3px;
+}

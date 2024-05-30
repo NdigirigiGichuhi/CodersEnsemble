@@ -10,13 +10,27 @@
     <div>
         <nav class="navbar">
             <h2>CodersEnsemble</h2>
-            <button>Login</button>
+            <a href="{{ url_for('main.display_profile')}}">
+                <button class="btn">Profile</button>
+            </a>
+            <p>We're testing this!</p>
+            {% if current_user.is_authenticated %}
+                <form action="{{ url_for('auth.logout') }}" method="POST" style="display:inline;">
+                    <button type="submit" class="logout">Logout</button>
+                </form>
+            {% else %}
+               <a href="{{ url_for('auth.login') }}">
+                    <button class="login">Login</button>
+               </a> 
+            {% endif %}
         </nav>
     </div>
     
 
     {% block main %}{% endblock main %}
-    {% block script %}{% endblock script %}
+    {% block script %}
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    {% endblock script%}
           
 </body>
 </html>

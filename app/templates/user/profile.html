@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block main %}
+    <h2>Hey {{ current_user.username }} Welcome to CodersEnsemble Dashboard</h2>
+    <div class="profile-card">
+        <h3 class="card-title"> {{ current_user.username }}</h3>
+        <p class="card-text"><strong>First Name:</strong>{{ current_user.firstname }}</p>
+        <p class="card-text"><strong>Last Name:</strong>{{ current_user.lastname }}</p>
+        <p class="card-text"><strong>Email:</strong>{{ current_user.email }}</p>
+        <a href="user/update-profile.html">
+            <button class="btn">Update Profile</button>
+        </a>
+    </div>
+{% endblock main %}
