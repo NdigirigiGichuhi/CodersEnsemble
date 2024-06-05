@@ -1,38 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Favicon Link -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='/img/favicon.png')}}">
+    <!--Link to the Google Font - Roboto -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <title>{% block title %}{% endblock title %}</title>
 </head>
+
 <body>
-    <div>
-        <nav class="navbar">
-            <h2>CodersEnsemble</h2>
+    <div class="header">
+        <div class="logo">
+            <a href="{{ url_for("main.index") }}" id="logo">CodersEnsemble</a>
+        </div>
+        <div class="navigation">
+            <nav class="navbar-links">
+                    <a href="#">About</a>
+                    <a href="#">How it Works</a>
+                    <a href="#">Support</a>
+            </nav>
+        </div>
+        <div class="cta">
             {% if current_user.is_authenticated %}
-            <a href="{{ url_for('main.display_profile')}}">
-                <button class="btn">Profile</button>
-            </a>
-            {% endif %}
-            <p>We're testing this!</p>
-            {% if current_user.is_authenticated %}
-                <form action="{{ url_for('auth.logout') }}" method="POST" style="display:inline;">
-                    <button type="submit" class="logout">Logout</button>
+                <form id="main-form" action="{{ url_for('auth.logout') }}" method="POST"">
+                    <button type="submit" class="log-btn">Logout</button>
                 </form>
             {% else %}
-               <a href="{{ url_for('auth.login') }}">
-                    <button class="login">Login</button>
-               </a> 
+                <a href="{{ url_for('auth.login') }}">
+                    <button class="log-btn">Login</button>
+                </a>
             {% endif %}
-        </nav>
-    </div>
+        </div>
+
+            
+            
     
+    
+    
+    
+        <!-- to tranfer elsewhere
+                {% if current_user.is_authenticated %}
+                <a href="{{ url_for('main.display_profile')}}">
+                    <button class="btn">Profile</button>
+                </a>
+                {% endif %}
+            -->
+    
+                
+            </nav>
+        </div>
+    </div>
+
 
     {% block main %}{% endblock main %}
     {% block script %}
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
     {% endblock script%}
-          
+
 </body>
+<footer>
+    <div class="footer-container">
+        <div class="privacy-policy">
+            <a href="">Privacy Policy</a>
+        </div>
+        <div class="tos">
+            <a href="">Terms of Service</a>
+        </div>
+        <div class="contact">
+            <a href="">Contact Us</a>
+        </div>
+        <div class="about">
+            <a href="">About</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 CodersEnsemble. All rights reserved.</p>
+    </div>
+</footer>
+<div class="footer">
+    
+   
+    
+    
+</div>
 </html>

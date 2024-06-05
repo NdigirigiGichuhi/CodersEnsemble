@@ -9,10 +9,16 @@ from datetime import datetime
 main_bp = Blueprint('main', __name__)
 
 
+@main_bp.route('/', methods=['GET'])
+def index():
+    return render_template('landing.html')
+
+
 @main_bp.route('/profile', methods=['GET'])
 @login_required
 def display_profile():
     return render_template('user/profile.html')
+
 
 @main_bp.route('/edit-profile', methods=['POST', 'GET'])
 def update_profile():
@@ -39,6 +45,7 @@ def update_profile():
 
 
 @main_bp.route('/post', methods=['POST', 'GET'])
+@login_required
 def post():
     form = PostForm()
 
@@ -53,6 +60,7 @@ def post():
 
 
 @main_bp.route('/editpost/<int:id>', methods=['POST', 'GET'])
+@login_required
 def edit_post(id):
     form = EditPostForm()
 

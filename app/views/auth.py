@@ -10,8 +10,8 @@ import bcrypt
 auth_bp = Blueprint('auth', __name__)
 
 
-@auth_bp.route('/', methods=['POST', 'GET'])
-def index():
+@auth_bp.route('/sign-up', methods=['POST', 'GET'])
+def sign_up():
     form = SignUpForm()
 
     if form.validate_on_submit():
@@ -32,8 +32,9 @@ def index():
             db.session.rollback()
             flash('An error occurred: {}'.format(e))
             print(e)
-            return redirect(url_for('auth.index'))  
-    return render_template('landing.html', form=form)
+            return redirect(url_for('auth.sign_up'))
+             
+    return render_template('auth/register.html', form=form)
 
 @auth_bp.route('/login', methods=['POST', 'GET'])
 def login():

@@ -3,30 +3,45 @@
 {% block title %}CodersEnsemble{% endblock title %}
 
 {% block main %}
-<div class="container">
-    <div class="content">
-        <h4>Meet and Colaborate with Developers on Projects</h4>
-        <p>"Unleash your code's potential, join CodersEnsemble today! Collaborate, innovate, and code together in
-            perfect harmony. Your next breakthrough awaits in our vibrant developer community.</p>
+<div class="hero-section">
+    <div class="hero-content">
+        <div class="intro">
+            <h2>Meet, Learn, and Colaborate with Peers on Projects</h2>
+            <p>Unleash your coding potential, join <span class="span">CodersEnsemble</span>  today! Collaborate in
+            perfect harmony. <br> You are a click away from learning with your peers.</p>
+        </div>
+        <div class="hero-cta">
+            <a href="{{ url_for('auth.sign_up')}}">
+                <button class="cta-btn">Get Started</button>
+            </a>
+        </div>
     </div>
-
-    <div class="signup">
-        <button>Sign Up with Google</button>
-        <form action="" method="POST">
-            {{ form.hidden_tag() }}
-
-            <p>{{ form.firstname() }}</p>
-            <p>{{ form.lastname() }}</p>
-            <p>{{ form.username() }}</p>
-            <p>{{ form.email() }}</p>
-            <p>{{ form.password() }}</p>
-            <p>{{ form.confirm_pass() }}</p>
-            <p>{{ form.submit() }}</p>
-
-        </form>
+    <div class="hero-img">
     </div>
+    
 </div>
+<section id="achieve">
+    <div class="section-header">
+        <h2>Achieve More from this Platform</h2>
+    </div>
+    <div class="services">
+        <div id="coding-colab">
+        </div>
+        <div id="learning">
 
+        </div>
+        <div class="forums">
+
+        </div>
+    </div>
+        
+</section>
+
+
+
+<!--
+
+    <img src="{{ url_for('static', filename='img/sign-up.jpg') }}" alt="People collaborating concept">
 <div class="reviews">
     <div class="review">
         <p>
@@ -37,6 +52,8 @@
         <p>CodersEnsemble has some great features, like the diverse range of projects and the ability to network with
             other coders.</p>
     </div>
+
+
     <div class="review">
         <p>
             <span><img src="{{ url_for('static', filename='img/user.jpg') }}"></span>
@@ -53,12 +70,6 @@
         <p>Great features and useful collaboration tools, but needs better project management and matchmaking. Promising
             platform with room for improvement.</p>
     </div>
+-->
 </div>
-
-<footer>
-    <p>Privacy Policy</p>
-    <p>Terms of Service</p>
-    <p>Contact Us</p>
-    <p>About</p>
-</footer>
 {% endblock main %}
