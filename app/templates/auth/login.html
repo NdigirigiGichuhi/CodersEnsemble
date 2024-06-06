@@ -4,11 +4,23 @@
 
 {% block main %}
 
-    <form method="POST">
+    <form method="POST" class="login-form">
         {{ form.hidden_tag() }}
 
-        <p>{{ form.username() }}</p>
-        <p>{{ form.password() }}</p>
-        <p>{{ form.submit() }}</p>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            {{ form.username(class="form-control", id="username") }}
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            {{ form.password(class="form-control", id="password") }}
+        </div>
+
+        <button type="submit" class="log-button">Login</button>
     </form>
 {% endblock main %}
+
+
+
+

@@ -17,59 +17,59 @@
         </div>
     </div>
     <div class="hero-img">
-    </div>
-    
+    </div>  
 </div>
+<section id="about-us">
+    <div class="small-container">
+        <h2 class="section-header">Why CodersEnsemble?</h2>
+        <div class="row-1">
+            <div class="col-2">
+                <h3>A Great Space to Collaborate, Learn, and Grow</h3>
+                <p>
+                    CodersEnsemble is a dynamic platform dedicated to bringing together coding enthusiasts from around the globe. 
+                    It offers a collaborative environment for learning, sharing knowledge, and working on projects. 
+                    With diverse resources and community support,
+                    CodersEnsemble fosters growth and innovation for both novice and experienced programmers.
+                </p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="col-2">
+                <img id="about-ce" src="{{ url_for('static', filename='/img/code-collab.png')}}" alt="illustration">
+            </div>
+        </div>
+    </div>
+</section>
 <section id="achieve">
     <div class="section-header">
-        <h2>Achieve More from this Platform</h2>
+        <h2>Achieve More just with one Click!</h2>
     </div>
-    <div class="services">
-        <div id="coding-colab">
+    <div class="row">
+        <div class="col-3">
+            <img src="{{ url_for('static', filename='/img/collaborate.png')}}" alt="collaborate with peers">
+            <h3>Collaborate with Ease</h3>
+            <p class="info-1">
+                Collaborate with your peers anytime you need on critical programming projects. Share your coding-colab
+                challenges and get response from like minded individuals.
+            </p>
         </div>
-        <div id="learning">
-
+        <div class="col-3">
+            <img src="{{ url_for('static', filename='/img/learning.png')}}" alt="learn to code">
+            <h3>Learn from your Peers</h3>
+            <p class="info-1">
+                Expand your knowledge in programming principles, programming languages, system design, data structure,
+                and other challenging areas that keep you ahead of the pack.
+            </p>
         </div>
-        <div class="forums">
-
+        <div class="col-3">
+            <img src="{{ url_for('static', filename='/img/forums.png')}}" alt="participate in forums">
+            <h3>Participate in Forums</h3>
+            <p class="info-1">
+                Participate in forums with junior devs or senior devs where you can comfortably get community support without the 
+                fear of victimization or being shy of being laughed at.
+            </p>
         </div>
     </div>
         
 </section>
 
-
-
-<!--
-
-    <img src="{{ url_for('static', filename='img/sign-up.jpg') }}" alt="People collaborating concept">
-<div class="reviews">
-    <div class="review">
-        <p>
-            <span><img src="{{ url_for('static', filename='img/user.jpg') }}"></span>
-            <span>Alice M:</span>
-        </p>
-
-        <p>CodersEnsemble has some great features, like the diverse range of projects and the ability to network with
-            other coders.</p>
-    </div>
-
-
-    <div class="review">
-        <p>
-            <span><img src="{{ url_for('static', filename='img/user.jpg') }}"></span>
-            <span>John S:</span>
-        </p>
-        <p>Perfect for beginners! Supportive community, excellent resources, and beginner-friendly projects have boosted
-            my confidence and knowledge.</p>
-    </div>
-    <div class="review">
-        <p>
-            <span><img src="{{ url_for('static', filename='img/user.jpg') }}"></span>
-            <span>David L:</span>
-        </p>
-        <p>Great features and useful collaboration tools, but needs better project management and matchmaking. Promising
-            platform with room for improvement.</p>
-    </div>
--->
-</div>
 {% endblock main %}
