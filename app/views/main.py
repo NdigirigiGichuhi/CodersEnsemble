@@ -89,3 +89,8 @@ def delete_post(id):
     db.session.commit()
     flash('Your post successfully deleted')
     return redirect(url_for("auth.dashboard"))
+
+
+@main_bp.route('/about')
+def about():
+    return render_template('main/about.html')

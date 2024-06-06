@@ -3,8 +3,9 @@
 {% block title %}Dasboard{% endblock title %}
 
 {% block main %}
+<!--
     <a href="{{ url_for('main.post') }}"><button>Post</button></a>
-
+    
     {% for post in posts %}
         <div>
             Posted By: {{ post.author.username }}
@@ -20,5 +21,53 @@
             <hr>
         </div>
     {% endfor %}
-        
+    -->
+
+<div class="dashboard">
+    <div class="sidebar">
+        <div class="home">
+            <a href="{{ url_for('auth.dashboard') }}"><img class="icons-dash"
+                    src="{{ url_for('static', filename='img/home.png') }}" alt=""></a>
+            <a href="{{ url_for('auth.dashboard') }}">
+                <p>Home</p>
+            </a>
+        </div>
+        <div class="posts">
+            <a href="{{ url_for('auth.dashboard') }}"><img class="icons-dash"
+                    src="{{ url_for('static', filename='img/posts.png') }}" alt=""></a>
+            <a href="{{ url_for('auth.dashboard') }}"><p>Posts</p></a>
+        </div>
+        <div class="create">
+            <a href="{{ url_for('main.post')}}"><img class="icons-dash" src="{{ url_for('static', filename='img/create.png') }}" alt=""></a>
+            <a href="{{ url_for('main.post')}}"><p>Create Post</p></a>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <h2>Channel Name</h2>
+        </div>
+        <div class="post-window">
+            {% for post in posts %}
+                Posted By: {{ post.author.username }}
+                {{ post.title }}<br>
+                {{ post.content }}
+                <div class="dash-btns">
+                    {% if current_user.username == post.author.username %}
+                <a href="{{ url_for('main.edit_post', id=post.id) }}"><button class="btn-dash">Edit</button></a>
+                {% endif %}
+                {% if current_user.username == post.author.username %}
+                <a href="{{ url_for('main.delete_post', id=post.id) }}"><button class="btn-dash">Delete</button></a>
+                </div>
+                {% endif %}
+                <hr>
+            {% endfor %}
+        </div>
+        <div class="message-input">
+            <input type="text" placeholder="Type a message...">
+            <button>Send</button>
+        </div>
+    </div>
+</div>
+
+
 {% endblock main %}

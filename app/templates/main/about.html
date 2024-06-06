@@ -1,0 +1,106 @@
+{% extends 'main.html' %}
+
+{% block title %}About-Us{% endblock title %}
+
+{% block main %}
+<div class="about-contaner">
+
+    <div class="intro2">
+        <div class="about-img">
+            <img class="ab-photo" src="{{ url_for('static', filename='img/about.jpg') }}" alt="">
+        </div>
+        <div class="about-p">
+            <h1>About CodersEnsemble</h1>
+            <p>Welcome to CodersEnsemble!</p>
+            <p>At CodersEnsemble, we believe in the power of collaboration and community. Our platform brings together
+                developers from all around the globe, creating a space where ideas flourish, projects come to life, and
+                skills
+                are continuously honed.</p>
+        </div>
+    </div>
+
+
+    <div class="row-3">
+        <div class="head">
+            <h2>What We Offer</h2>
+        </div>
+
+        <div class="offers">
+            <div class="offer">
+                <h3>Collaboration</h3>
+                <p>CodersEnsemble is designed to facilitate seamless collaboration. Whether you are working on an
+                    open-source
+                    project, seeking feedback on your code, or looking for a team to join forces with, our platform
+                    provides
+                    the
+                    tools and community support you need.</p>
+            </div>
+
+            <div class="offer">
+                <h3>Project Updates</h3>
+                <p>Stay updated with the latest developments in your projects. Our platform allows you to track
+                    progress,
+                    share
+                    updates, and stay in the loop with what your team members are working on.</p>
+            </div>
+
+            <div class="offer">
+                <h3>Knowledge Sharing</h3>
+                <p>We believe in the power of shared knowledge. CodersEnsemble provides a space for developers to share
+                    tutorials,
+                    write-ups, and articles that can help others learn and grow. Our community is enriched by the
+                    diverse
+                    experiences and insights of its members.</p>
+            </div>
+
+            <div class="offer">
+                <h3>Networking Opportunities</h3>
+                <p>Connect with like-minded individuals and expand your professional network. CodersEnsemble is not just
+                    a
+                    place to
+                    work on projects; it's a community where you can meet other developers, find mentors, and discover
+                    new
+                    opportunities.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row-4">
+        <div class="mission">
+            <h2>Our Mission</h2>
+            <p>Our mission is to foster a collaborative environment where<br> developers of all levels can connect,
+                collaborate, and
+                grow together. <br>We aim to bridge the gap between coders, allowing them to share knowledge,<br>
+                resources,
+                and
+                experiences to create innovative solutions.</p>
+        </div>
+
+        <div class="mission">
+            <h2>Our Values</h2>
+            <ul>
+                <li><strong>Collaboration:</strong> We believe that the best solutions come from working together.</li>
+                <li><strong>Innovation:</strong> We are committed to fostering a space where new ideas and approaches
+                    can
+                    thrive.</li>
+                <li><strong>Learning:</strong> Continuous learning and growth are at the heart of our community.</li>
+                <li><strong>Support:</strong> We provide a supportive environment where all members feel valued and
+                    heard.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="mission">
+        <h2>Join Us</h2>
+        <p>Whether you are a seasoned developer or just starting your coding journey, CodersEnsemble welcomes you. Join
+            us
+            today and be a part of a community that values collaboration, innovation, and continuous learning.</p>
+        <p>Together, we can build something amazing.</p>
+    </div>
+</div>
+
+{% endblock main %}

@@ -439,3 +439,197 @@ button {
 .log-button:hover {
     background-color: #F87C50;
 }
+
+
+.about-container {
+    margin: 50px;
+    padding: 10px;
+}
+
+
+/* gpt dashboard */
+
+.dashboard {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #2f3136;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background-color: #202225;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.server-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.server-item {
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.server-item:hover {
+    background-color: #393c43;
+}
+
+.main-content {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 20px;
+    background-color: #202225;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.post-window {
+   display: flex;
+   flex-direction: column;
+}
+
+.message {
+    margin: 10px 0;
+}
+
+.user-name {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.message-input {
+    display: flex;
+    padding: 20px;
+    background-color: #2f3136;
+}
+
+.message-input input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #40444b;
+    color: #fff;
+}
+
+.message-input button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7289da;
+    color: #fff;
+    cursor: pointer;
+}
+
+.intro2 {
+    display: flex;
+}
+
+.about-img {
+    width: 50%;
+}
+
+.ab-photo {
+    width: 100%;
+    height: 100%;
+}
+
+.about-p {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.mission {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row-3 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+}
+
+.offers {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.offer {
+    margin: 10px;
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.row-4 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.head {
+    display: flex;
+    justify-content: center;
+}
+
+.posts, .home, .create {
+    margin: 0 auto;
+}
+
+.icons-dash {
+    width: 30px;
+    height: 30px;
+}
+
+.home, .posts, .create {
+    display: flex;
+    align-items: center;
+    
+}
+
+.home, .posts {
+    margin-bottom: 20px;
+}
+
+.home {
+    padding-top: 20px;
+}
+
+.home p, .posts p, .create p {
+    margin-bottom: 0;
+    color: white;
+}
+
+.btn-dash {
+    width: fit-content;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.dash-btns {
+    display: flex;
+}
