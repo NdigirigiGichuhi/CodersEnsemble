@@ -1,4 +1,4 @@
-from flask import render_template, redirect, url_for, flash, Blueprint, request
+from flask import render_template, redirect, url_for, flash, Blueprint, request, jsonify
 from app import db
 from app.forms import SignUpForm, LoginForm, EditProfileForm, PostForm, EditPostForm
 from flask_login import login_user, logout_user, login_required, current_user
@@ -59,6 +59,21 @@ def post():
     return render_template('main/post.html', form=form)
 
 
+@main_bp.route('/update_post', methods=['POST'])
+@login_required
+def update_post():
+    post_id = request.form['post_id']
+    content = request.form['content']
+    post = Post.query.get(post_id)
+    if post and post.user_id == current_user.user_id:
+        post.content = content
+        db.session.commit()
+        return jsonify({"success": True, "message": "Post updated successfully!"})
+    return jsonify({"success": False, "message": "Post not found or unauthorized!"})
+
+
+
+"""
 @main_bp.route('/editpost/<int:id>', methods=['POST', 'GET'])
 @login_required
 def edit_post(id):
@@ -79,9 +94,9 @@ def edit_post(id):
         form.updated_at.data = post.updated_at
 
     return render_template('main/edit-post.html', id=id, post=post, form=form)
+"""
 
-
-@main_bp.route('/delete/<int:id>)', methods=['GET'])
+@main_bp.route('/delete/<int:id>', methods=['GET'])
 @login_required
 def delete_post(id):
     post = Post.query.get_or_404(id)
