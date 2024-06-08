@@ -921,3 +921,91 @@ button {
     overflow: auto; /* Enable scrolling if content overflows */
     line-height: 1.6; /* Line height for better readability */
 }
+
+
+/*Create Post Form*/
+/* General card styling */
+.create-card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+.post-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-post {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.btn-post {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-post:hover {
+  background-color: #0056b3;
+}
+
+.btn-primary {
+  background-color: #007bff;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  margin-left: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .card {
+      margin: 10px;
+  }
+
+  .form-control {
+      font-size: 0.9em;
+  }
+
+  .btn {
+      font-size: 0.9em;
+      padding: 8px 16px;
+  }
+}
