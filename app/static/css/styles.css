@@ -215,6 +215,55 @@ footer {
   margin: 0;
 }
 
+
+.call-to-action {
+  max-width: 100%;
+  max-height: auto;
+  margin-bottom: 80px;
+  margin-top: 80px;
+}
+
+.cta-container {
+  background-color: #3882F6;
+  max-width: 80%;
+  height: 100px;
+  display: flex;
+  margin: 0 auto; /* Fixed margin syntax */
+  border-radius: 8px;
+  flex-direction: row;
+  align-items: center;
+  padding: 80px;
+}
+
+.cta-text h3,
+.cta-text p {
+  color: #f4f4f9;
+}
+
+.cta-text {
+  padding-left: 70px;
+  padding-right: 200px;
+}
+
+.cta-btn {
+  background-color: #3882F6;
+  border: 2px solid #f9faf8;
+  border-radius: 6px;
+  text-align: center;
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1.2;
+  font-size: 16px;
+  color: #f9faf8;
+  font-weight: bold;
+  font-size:larger;
+  padding: 10px 40px;
+}
+
+.cta-btn:hover {
+  background-color: #2a69d1; /* Darken button color on hover */
+}
+
 /* Services Section */
 .services {
   display: flex;
@@ -225,26 +274,6 @@ footer {
   background-image: url("../img/coding.png");
 }
 
-.signup-container {
-  display: flex;
-  justify-content: space-between;
-  width: 80vw;
-  padding: 30px;
-  flex-direction: row;
-}
-
-#signup-image {
-  width: 50%;
-  background-image: url("../img/sign-up.jpg");
-  background-color: #0f70da;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-#signup-section h2 {
-  color: #f87c50;
-}
 .content {
   display: flex;
   flex-direction: column;
@@ -292,10 +321,12 @@ footer {
 .section-header {
   text-align: center;
   margin-bottom: 40px;
+  color: #f87c50;
 }
 
 .section-header h2 {
   color: #f87c50;
+  padding-top: 30px;
 }
 
 .row .col-3 img {
@@ -391,9 +422,32 @@ input[type="submit"] {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
-  width: 40%;
+  width: 70%;
   display: flex;
   align-items: center;
+}
+
+#login-form {
+  padding-top: 150px;
+  padding-bottom: 300px;
+}
+
+.inner {
+  padding: 20px;
+  border: 1px white solid;
+  border-radius: 10px;
+  background-color: #A6CFD5;
+  
+}
+
+.login-label {
+  color: black;
+}
+
+.fields {
+  width: 500px;
+  height: 100px;
+  margin: 0 auto;
 }
 
 label {
@@ -413,8 +467,8 @@ button {
 }
 
 .log-button {
-  background-color: transparent;
-  color: #fff;
+  background-color: white;
+  color: black;
   cursor: pointer;
   width: 40%;
   display: block;
@@ -1009,3 +1063,245 @@ button {
       padding: 8px 16px;
   }
 }
+
+
+/*Update profile*/
+
+
+.update-profile-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form-group-edit {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control-edit-label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: black;
+}
+
+.form-control-edit-input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.form-control-edit-input.is-invalid {
+  border-color: #dc3545;
+}
+
+.invalid-feedback {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+.btn-prof {
+  background-color: #1e7e34;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid #17a2b8;
+  color: #17a2b8;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-prof:hover {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+legend {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: black;
+  border: 1px solid black;
+}
+
+
+/* profile page*/
+
+.profile-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  text-align: justify;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.profile-card .profile-image {
+  border-radius: 50%;
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.profile-card .card-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.profile-card .card-text {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.profile-card .card-text strong {
+  color: #555;
+}
+
+.profile-card .user-firstname,
+.profile-card .user-lastname,
+.profile-card .user-email {
+  color: #333;
+}
+
+.btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  color: #fff;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* new code */
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 800px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* Style for the signup form section */
+#signup-section {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+
+#signup-section h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#signup-section p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+form {
+  width: 100%;
+}
+
+form div {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #5cb85c;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+form button:hover {
+  background-color: #4cae4c;
+}
+
+.red {
+  color: red;
+  font-size: 12px;
+}
+
+hr {
+  width: 100%;
+  margin: 20px 0;
+}
+
+#google-signup {
+  width: 100%;
+  padding: 10px;
+  background-color: #db4437;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#google-signup:hover {
+  background-color: #c23321;
+}
+

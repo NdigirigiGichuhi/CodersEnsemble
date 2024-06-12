@@ -1,17 +1,24 @@
-{% extends 'main.html' %}
-
-{% block title %}Home{% endblock title %}
-
-{% block main %}
-    <h2>Hey {{ current_user.username }} Welcome to CodersEnsemble Dashboard</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
     <div class="profile-card">
-        <img src="{{ current_user.avatar(128) }}" alt="">
-        <h3 class="card-title"> {{ current_user.username }}</h3>
-        <p class="card-text"><strong>First Name:</strong>{{ current_user.firstname }}</p>
-        <p class="card-text"><strong>Last Name:</strong>{{ current_user.lastname }}</p>
-        <p class="card-text"><strong>Email:</strong>{{ current_user.email }}</p>
+        <img src="{{ current_user.avatar(128) }}" alt="Profile Picture" class="profile-image">
+        <h3 class="card-title">{{ current_user.username }}</h3>
+        <p class="card-text"><strong>First Name:</strong> <span class="user-firstname">{{ current_user.firstname }}</span></p>
+        <p class="card-text"><strong>Last Name:</strong> <span class="user-lastname">{{ current_user.lastname }}</span></p>
+        <p class="card-text"><strong>Email:</strong> <span class="user-email">{{ current_user.email }}</span></p>
         <a href="{{ url_for('main.update_profile') }}">
             <button class="btn">Update Profile</button>
         </a>
+        <a href="{{ url_for('auth.dashboard') }}">
+            <button class="btn">Go to Dashboard</button>
+        </a>
     </div>
-{% endblock main %}
+</body>
+</html>

@@ -1,26 +1,28 @@
 {% extends 'main.html' %}
 
-{% block title %}Login{%  endblock title %}
+{% block title %}Login{% endblock title %}
 
 {% block main %}
-
+<div id="login-form">
     <form method="POST" class="login-form">
         {{ form.hidden_tag() }}
-
-        <div class="form-group">
-            <label for="username">Username:</label>
-            {{ form.username(class="form-control", id="username") }}
+        <div class="fields">
+            <div class="inner">
+                <div class="form-group">
+                    <label for="username" class="login-label">Username:</label>
+                    {{ form.username(class="form-control", id="username") }}
+                </div>
+        
+                <div class="form-group">
+                    <label for="password" class="login-label">Password:</label>
+                    {{ form.password(class="form-control", id="password") }}
+                </div>
+                <button type="submit" class="log-button">Login</button>
+            </div>
         </div>
 
-        <div class="form-group">
-            <label for="password">Password:</label>
-            {{ form.password(class="form-control", id="password") }}
-        </div>
-
-        <button type="submit" class="log-button">Login</button>
+        
     </form>
+</div>
+
 {% endblock main %}
-
-
-
-
